@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block content %}
+    
+    <div
+        class="container"
+    >
+    <h2>Contáctanos</h2>
+    <form action="../enviar_formulario/" method='Post'>
+        {% csrf_token %}
+        <label for="">Nombre</label>
+        <input type="text" name='nombre' placeholder='Ingresa tu nombre'>
+        <label for="">Apellido</label>
+        <input type="text" name='apellido' placeholder='Ingresa tu apellido'>
+        <button>ENVIAR</button>
+    </form>
+        
+    </div>
+    
+    {% endblock  %}
