@@ -22,12 +22,24 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url "acerca" %}">Acerca</a>
         </li>
+        {% if user.is_autenticated %}
         <li class="nav-item">
             <a class="nav-link" href="{% url "bienvenido" %}">Bienvenido</a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "contacto" %}">Contacto</a>
           </li>
+          {% if not user.is_autenticated %}
+          <li class="nav-item">
+            <a href="{% url "contacto" %}"><button type="button" class="btn btn-outline-info">Iniciar sesión</button></a>
+          </li>
+          {% endif %}
+          {% if user.is_autenticated %}
+          <li class="nav-item">
+            <a href="{% url "contacto" %}"><button type="button" class="btn btn-outline-info">Cerrar sesión</button></a>
+          </li>
+          {% endif %}
         {% comment %}
         <li class="nav-item dropdown">
           <a

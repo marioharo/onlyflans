@@ -13,6 +13,12 @@
             <img src="{% static "img/flan1.jpg" %}" class="d-block w-100" alt="" height="450px">
           </div>
           <div class="carousel-item">
+            <img src="{% static "img/flan2.jpg" %}" class="d-block w-100" alt="" height="450px">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "img/flan3.jpg" %}" class="d-block w-100" alt="" height="450px">
+          </div>
+          <div class="carousel-item">
             <img src="{% static "img/flan4.jpg" %}" class="d-block w-100" alt="" height="450px">
           </div>
         </div>
@@ -29,12 +35,16 @@
     </button>
         <!-- botones editados en css para que sean círculos -->
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
       </div>
       </div>
       {% comment %} Fin Carousel {% endcomment %}
@@ -48,111 +58,19 @@
             <img
                 class="card-img-top"
                 src="{{ flan.img_url }}"
-                alt="Card image cap"
+                alt="flan"
             />
             <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
+                <h4 class="card-title">{{ flan.title }}</h4>
+                <p class="card-text">{{ flan.descripcion }}</p>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ flan.precio}}</h6>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
     </div>
 
       {% endfor %}
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-      </div>
-    </div>
     
-    <div class="row row-cols-1 row-cols-sm-4  mb-4">
-        <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card border">
-            <img
-                class="card-img-top"
-                src="{% static "img/flan_card.jpg" %}"
-                alt="Card image cap"
-            />
-            <div class="card-body">
-                <h4 class="card-title">Flan Nº</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate.</p>
-            </div>
-        </div>
-      </div>
-    </div>
 {% comment %} redes sociales {% endcomment %}
       <div
         class="container"

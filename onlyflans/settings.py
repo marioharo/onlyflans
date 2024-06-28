@@ -29,15 +29,15 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+    
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'web', # app core
+    'django.contrib.admin', # el sitio administrativo
+    'django.contrib.auth', # un sistema de autenticación
+    'django.contrib.contenttypes', # un framework para los tipos de contenido
+    'django.contrib.sessions', # un framework de sesion
+    'django.contrib.messages', # un framework de mensajería
+    'django.contrib.staticfiles', #un framework para la gestión de archivos estáticos
+    'web', # la primera app del proyecto (core)
 ]
 
 MIDDLEWARE = [
