@@ -7,6 +7,11 @@ from .forms import ContactFormForm # form del back
 # Create your views here.
 
 
+def login(request):
+    """vista necesaria para el logeo exitoso y redireccionamiento a la vista con autentificación"""
+    return redirect('accounts/login')
+
+
 def home(request):
     """Utiliza el template home.html"""
     #flanes = Flan.objects.all() # muestra todos los productos

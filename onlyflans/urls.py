@@ -20,11 +20,11 @@ from web import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')), # vista para el login
     path('', core_views.home, name='home'),
     path('acerca/', core_views.acerca, name='acerca'),
     path('bienvenido/', core_views.bienvenido, name='bienvenido'),
     path('contacto/', core_views.contacto, name='contacto'),
     path('exito/', core_views.exito, name='exito'),
     #path('enviar_formulario', core_views.enviar_formulario, name='enviar_formulario'),
-    path('accounts/', include('django.contrib.auth.urls')), # endpoint para el login
 ]

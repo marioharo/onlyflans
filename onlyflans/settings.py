@@ -123,5 +123,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'bienvenido/'
-LOGOUT_REDIRECT_URL = '/'
+# para cambiar las rutas por defecto de la autenficacion de django
+LOGIN_REDIRECT_URL = '../../bienvenido/' # al iniciar sesión muestra este endpoint
+LOGOUT_REDIRECT_URL = '/' # al cerrar sesión se redirige al endpoint home
