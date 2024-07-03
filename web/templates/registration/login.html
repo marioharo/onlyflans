@@ -2,7 +2,7 @@
 {% block content %}
     <!--Formulario para login-->
     <div class="container">
-        <div class="m-auto text-center">
+        <div class="m-auto text-center py-5">
             <h2>Inicia Sesión</h2>
             <form action="{% url "login" %}" method='POST'>
                 {% csrf_token %}

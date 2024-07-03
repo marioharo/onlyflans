@@ -148,12 +148,13 @@
   <div class="container">
     <div class="m-auto text-center py-5">
       <h3 class="text-white">Suscríbete para recibir nuestras novedades</h3>
+      <!--Newsletter form-->
       <form action="{% url "home" %}" method="post">
         {% csrf_token %}
         <!--<label for="">Nombre</label>
         <input type="text" name='Nombre' placeholder='Ingresa tu nombre'>
         <label for="">Correo</label>-->
-        <input type="text" name="Email" placeholder='Ingrese su correo'>
+        <input type="text" name="newsletter_email" placeholder='Ingrese su correo electrónico'>
         <button type="submit" value='submit'>Suscribirse</button>
       </form>
     </div>

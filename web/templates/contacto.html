@@ -25,23 +25,34 @@
 
     <!--Formulario hecho con forms.py-->
     <div class="container">
-        <div class="m-auto text-center">
-            <h2>Contáctanos</h2>
-            <form action="{% url "contacto" %}" method='POST'>
-                {% csrf_token %}
-                {{form.non_field_errors}} <!--valida los campos nulos-->
-                <label for="">{{form.customer_email.label_tag}}</label>
-                <div>{{form.customer_email}}</div>
-                <div class="text-danger">{{form.customer_email.errors}}</div>
-                <label for="">{{form.customer_name.label_tag}}</label>
-                <div>{{form.customer_name}}</div>
-                <label for="">{{form.customer_lastname.label_tag}}</label>
-                <div>{{form.customer_lastname}}</div>
-                <label for="">{{form.message.label_tag}}</label>
-                <div>{{form.message}}</div>
-                <input type="submit" value="submit">
-            </form>
-        </div>
+        <div class="row py-5">
+            
+            <div class="col-md-6 m-auto text-center">
+                <h2>Estamos ubicados</h2>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25932.29315964144!2d139.6740335226059!3d35.66378606995078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b079eb70d7b%3A0xdc93642f2125d8fd!2z44OV44Op44Oz44K7IOihqOWPgumBk-acrOW6lw!5e0!3m2!1ses-419!2spe!4v1720036816798!5m2!1ses-419!2spe" width="700" height="300" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-6 m-auto text-center">
+                <h2>Contáctanos</h2>
+                <form action="{% url "contacto" %}" method='POST'>
+                    {% csrf_token %}
+                    {{form.non_field_errors}} <!--valida los campos nulos-->
+                    <label for="">{{form.customer_email.label_tag}}</label>
+                    <div>{{form.customer_email}}</div>
+                    <div class="text-danger">{{form.customer_email.errors}}</div>
+                    <label for="">{{form.customer_name.label_tag}}</label>
+                    <div>{{form.customer_name}}</div>
+                    <label for="">{{form.customer_lastname.label_tag}}</label>
+                    <div>{{form.customer_lastname}}</div>
+                    <label for="">{{form.message.label_tag}}</label>
+                    <div>{{form.message}}</div>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+
+        </div><!--Fin row-->
     </div>
     
     {% endblock  %}

@@ -10,7 +10,7 @@ class Flan(models.Model):
     nombre = models.CharField(max_length=64)
     descripcion = models.CharField(max_length=100)
     precio = models.IntegerField()
-    slug = models.SlugField()
+    slug = models.SlugField(null=True, blank=True)
     is_private = models.BooleanField()
 
     def __str__(self) -> str:
@@ -20,6 +20,13 @@ class Flan(models.Model):
             self.is_private = 'NO PRIVADO'
         return f'{self.nombre}: ${self.precio} - ({self.is_private})'
     
+
+class NewsletterForm(models.Model):
+    newsletter_email = models.EmailField()
+
+    def __str__(self) -> str:
+        return f'{self.newsletter_email}'
+
 
 class ContactForm(models.Model):
     contact_form_uuid = models.UUIDField(default=uuid.uuid4, editable=False) # agrega automáticamente un uuid4

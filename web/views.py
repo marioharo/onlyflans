@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Flan, ContactForm # # form del front
+from .models import Flan, ContactForm, NewsletterForm # form del front
 from .forms import ContactFormForm # form del back
 
 # Create your views here.
@@ -14,9 +14,17 @@ def login(request):
 
 def home(request):
     """Utiliza el template home.html"""
-    #flanes = Flan.objects.all() # muestra todos los productos
-    flanes = Flan.objects.filter(is_private = False) # filtra los productos por no privado
-    return render(request, 'home.html', context={'flanes':flanes})
+    # formulario newsletter
+    if request.method == "POST":
+        newsletter_email = request.POST['newsletter_email']
+        NewsletterForm.objects.create(
+            newsletter_email = newsletter_email,
+        )
+        return redirect('../exito/')
+    else:
+        #flanes = Flan.objects.all() # muestra todos los productos
+        flanes = Flan.objects.filter(is_private = False) # filtra los productos por no privado
+        return render(request, 'home.html', context={'flanes':flanes})
 
 
 def acerca(request):
