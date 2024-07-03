@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div class="container">
-  {% comment %} Carousel {% endcomment %}
+  <!--Inicio Carousel-->
   <div
     id="carouselExampleAutoplaying"
     class="carousel slide mb-3"
@@ -73,10 +73,10 @@
       ></button>
     </div>
   </div>
-  {% comment %} Fin Carousel {% endcomment %}
+  <!--Fin Carousel-->
   <h2 class="text-center my-4">Los más destacado</h2>
-  {% comment %} Cards {% endcomment %}
 
+  <!--Inicio Cards-->
   <div class="row row-cols-1 row-cols-md-4 g-3 mb-5">
     {% for flan in flanes %}
     <div class="col">
@@ -95,7 +95,7 @@
     {% endfor %}
   </div>
 
-  {% comment %} redes sociales {% endcomment %}
+  <!--Redes Sociales-->
   <div class="container">
     <h2 class="text-center my-4">Síguenos en nuestras redes sociales</h2>
     <div class="d-flex justify-content-evenly py-5">
@@ -139,5 +139,25 @@
       </a>
     </div>
   </div>
+  <!--Fin de redes sociales-->
 </div>
+<!--Fin container-->
+
+<!--Inicio suscribete-->
+<div class="bg-danger">
+  <div class="container">
+    <div class="m-auto text-center py-5">
+      <h3 class="text-white">Suscríbete para recibir nuestras novedades</h3>
+      <form action="{% url "home" %}" method="post">
+        {% csrf_token %}
+        <!--<label for="">Nombre</label>
+        <input type="text" name='Nombre' placeholder='Ingresa tu nombre'>
+        <label for="">Correo</label>-->
+        <input type="text" name="Email" placeholder='Ingrese su correo'>
+        <button type="submit" value='submit'>Suscribirse</button>
+      </form>
+    </div>
+  </div>
+</div>  
+<!--Fin suscribete-->
 {% endblock %}
