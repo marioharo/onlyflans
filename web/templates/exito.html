@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+<h3 class='text-center'>Mensaje enviado</h3>
+<p class="text-center">Gracias por comunicarte con nosotros, recibirá una respuesta muy pronto.</p>
+<a href="{% url "home" %}" class='btn btn-danger'>Volver al inicio</a>
+</div>
+{% endblock content %}

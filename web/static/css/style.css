@@ -1,9 +1,12 @@
 *{
     font-family: "Cabin", sans-serif;
-    --celeste: rgba(20, 175, 232, 0.3);
+    --celeste: rgba(20, 175, 232);
+    --celeste_opacity: rgba(20, 175, 232, 0.3);
     scroll-behavior: smooth; /* Smooth Scroll */
 }
-
+a{
+    text-decoration: none;
+}
 /* Boton ir arriba */
 #btn_gototop{
     display: none;
@@ -14,7 +17,7 @@
     padding: 0.4rem 0.7rem;
     border-radius: 50%;
     border: none;
-    background-color: transparent;
+    background-color:var(--celeste_opacity);
     transition-duration: .3s;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -22,13 +25,14 @@
     -o-border-radius: 50%;
 }
     #btn_gototop:hover {
-        background-color:var(--celeste);
         cursor: pointer;
-        transform: scale(1.3);
-        -webkit-transform: scale(1.3);
-        -moz-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        -o-transform: scale(1.3);
+        color: white;
+        background-color:var(--celeste);
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
 }
 
 h2 {
@@ -46,7 +50,17 @@ h2 {
     top: 1rem;
     background-color: aliceblue;
 }
+
+/* cards */
+.card{
+    height: 100%;
+}
+.card-img, .card-img-top{
+    height: 200px;
+    object-fit: cover;
+}
+
 /* Icons */
 .bi-instagram{
-    color: green;
+    color: var(--celeste);
 }

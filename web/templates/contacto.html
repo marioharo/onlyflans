@@ -3,19 +3,45 @@
 
     {% block content %}
     
-    <div
+    <!--<div
         class="container"
     >
+
     <h2>Contáctanos</h2>
-    <form action="../enviar_formulario/" method='Post'>
+    <form action="{% url "contacto" %}" method="post">
         {% csrf_token %}
         <label for="">Nombre</label>
-        <input type="text" name='nombre' placeholder='Ingresa tu nombre'>
+        <input type="text" name='Nombre' placeholder='Ingresa tu nombre'>
         <label for="">Apellido</label>
-        <input type="text" name='apellido' placeholder='Ingresa tu apellido'>
-        <button>ENVIAR</button>
+        <input type="text" name='Apellido' placeholder='Ingresa tu apellido'>
+        <label for="">Correo</label>
+        <input type="text" name="Email" placeholder='Ingrese su correo'>
+        <label for="">mensaje</label>
+        <input type="text" name='Mensaje' placeholder='Ingrese un mensaje'>
+        <button type="submit" value='submit'>ENVIAR</button>
     </form>
         
+    </div>-->
+
+    <!--Formulario hecho con forms.py-->
+    <div class="container">
+        <div class="m-auto text-center">
+            <h2>Contáctanos</h2>
+            <form action="{% url "contacto" %}" method='POST'>
+                {% csrf_token %}
+                {{form.non_field_errors}} <!--valida los campos nulos-->
+                <label for="">{{form.customer_email.label_tag}}</label>
+                <div>{{form.customer_email}}</div>
+                <div class="text-danger">{{form.customer_email.errors}}</div>
+                <label for="">{{form.customer_name.label_tag}}</label>
+                <div>{{form.customer_name}}</div>
+                <label for="">{{form.customer_lastname.label_tag}}</label>
+                <div>{{form.customer_lastname}}</div>
+                <label for="">{{form.message.label_tag}}</label>
+                <div>{{form.message}}</div>
+                <input type="submit" value="submit">
+            </form>
+        </div>
     </div>
     
     {% endblock  %}
