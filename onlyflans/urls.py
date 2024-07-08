@@ -26,5 +26,4 @@ urlpatterns = [
     path('bienvenido/', core_views.bienvenido, name='bienvenido'),
     path('contacto/', core_views.contacto, name='contacto'),
     path('exito/', core_views.exito, name='exito'),
-    #path('enviar_formulario', core_views.enviar_formulario, name='enviar_formulario'),
 ]

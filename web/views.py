@@ -22,7 +22,6 @@ def home(request):
         )
         return redirect('../exito/')
     else:
-        #flanes = Flan.objects.all() # muestra todos los productos
         flanes = Flan.objects.filter(is_private = False) # filtra los productos por no privado
         return render(request, 'home.html', context={'flanes':flanes})
 
@@ -55,6 +54,7 @@ def bienvenido(request):
 #             mensaje = mensaje,
 #         )
 #     return HttpResponse("Formulario recibido")
+
 
 def contacto(request):
     """Formulario que utiliza el template contacto.html con GET y envía los valores hacia la bbdd con POST"""
